@@ -1,41 +1,41 @@
 # Teamlead Toolkit
 
-A set of practical tools and templates for team leads and tech leads to improve daily processes, boost transparency, and support healthy engineering culture in software teams.
+Набор практических инструментов и шаблонов для тимлидов и техлидов, чтобы улучшать ежедневные процессы, повышать прозрачность и поддерживать здоровую инженерную культуру в командах разработки.
 
-## What is this repository for?
+## Для чего нужен этот репозиторий?
 
-This toolkit helps team leads:
+Этот инструмент помогает тимлидам:
 
-- Collect and track daily team progress with simple, structured daily reports
-- Automate reminders and improve communication transparency
-- Use checklists and templates for high-quality code reviews and merge requests
-- Analyze team activity in GitLab and spot bottlenecks early
-- Visualize team skill matrices and growth areas
-- Standardize engineering rituals, from release trains to BPMN process diagrams
+- Собирать и отслеживать ежедневный прогресс команды с помощью простых структурированных отчётов
+- Автоматизировать напоминания и повышать прозрачность коммуникаций
+- Использовать чек-листы и шаблоны для качественных code review и merge request
+- Анализировать активность команды в GitLab и выявлять узкие места заранее
+- Визуализировать матрицы компетенций и зоны роста команды
+- Стандартизировать инженерные ритуалы — от release train до BPMN-диаграмм процессов
 
-All components are ready to use, easy to adapt, and designed for real-world distributed teams.
+Все компоненты готовы к использованию, легко адаптируются и рассчитаны на реальные распределённые команды.
 
-## Main components
+## Основные компоненты
 
-- **Daily Report Bot**: Template and scripts for daily team standups in Slack/Telegram
-- **MR Checklist**: Merge Request template and Danger.js configuration
-- **Release Train Diagram**: Tools and samples for release planning
-- **BPMN Process Templates**: Ready-to-use diagrams for task delivery
-- **GitLab Analytics Scripts**: Examples for parsing activity and generating team dashboards
-- **Skill Matrix**: Sample files and algorithms for team competency mapping
+- **Бот ежедневных отчётов**: шаблон и скрипты для ежедневных стендапов в Slack/Telegram
+- **Чек-лист для Merge Request**: шаблон MR и конфигурация Danger.js
+- **Диаграмма Release Train**: инструменты и примеры для планирования релизов
+- **Шаблоны BPMN-процессов**: готовые диаграммы для доставки задач
+- **Скрипты аналитики GitLab**: примеры для парсинга активности и построения дашбордов команды
+- **Матрица компетенций**: образцы файлов и алгоритмы для оценки навыков команды
 
-## How to get started
+## Как начать использовать
 
-Each component has its own folder and quickstart guide inside.
+В каждом компоненте есть отдельная папка и краткая инструкция.
 
-1. Choose the tool you want to use or adapt.
-2. Follow the instructions in the relevant README or script header.
-3. Plug into your workflow and improve team health right away.
+1. Выберите нужный инструмент или шаблон.
+2. Следуйте инструкциям в соответствующем README или в заголовке скрипта.
+3. Встраивайте в свой процесс и улучшайте работу команды уже сегодня.
 
-## Contributing
+## Как внести вклад
 
-Feedback, issues and pull requests are welcome! Share your use cases or suggest new tools.
+Любой фидбэк, вопросы и pull request приветствуются! Делитесь кейсами или предлагайте новые инструменты.
 
 ---
 
-_This project is open-source and designed for the everyday challenges of IT team leads._
+_Этот проект — open-source и создан для реальных задач тимлидов в IT._
