@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Train Process</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .lane {
+            display: flex;
+            align-items: center;
+            min-height: 100px;
+            border-bottom: 2px solid #ecf0f1;
+            position: relative;
+        }
+        
+        .lane:last-child {
+            border-bottom: none;
+        }
+        
+        .lane-label {
+            width: 150px;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            border-right: 2px solid #ecf0f1;
+        }
+        
+        .lane-content {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+            height: 60px;
+        }
+        
+        .milestone {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 100px;
+            line-height: 1.2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+        
+        .milestone:hover {
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        /* Lane colors */
+        .dev-lane {
+            background-color: #dae8fc;
+        }
+        
+        .dev-lane .lane-label {
+            color: #1b5397;
+            background-color: #dae8fc;
+        }
+        
+        .qa-lane {
+            background-color: #fff2cc;
+        }
+        
+        .qa-lane .lane-label {
+            color: #d69100;
+            background-color: #fff2cc;
+        }
+        
+        .uat-lane {
+            background-color: #e1d5e7;
+        }
+        
+        .uat-lane .lane-label {
+            color: #5e4b8b;
+            background-color: #e1d5e7;
+        }
+        
+        .release-lane {
+            background-color: #d5e8d4;
+        }
+        
+        .release-lane .lane-label {
+            color: #2b6c2b;
+            background-color: #d5e8d4;
+        }
+        
+        /* Milestone colors */
+        .scope-lock {
+            background-color: #ffcccc;
+            color: #b85450;
+            left: 20px;
+        }
+        
+        .code-freeze {
+            background-color: #ffe6cc;
+            color: #d69100;
+            left: 300px;
+        }
+        
+        .qa-freeze {
+            background-color: #fff2cc;
+            color: #d69100;
+            left: 300px;
+        }
+        
+        .demo {
+            background-color: #e1d5e7;
+            color: #5e4b8b;
+            left: 550px;
+            min-width: 120px;
+        }
+        
+        .production {
+            background-color: #d5e8d4;
+            color: #2b6c2b;
+            left: 820px;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: absolute;
+            top: 0;
+            left: 170px;
+            right: 20px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to right,
+                transparent,
+                transparent 98px,
+                #bdc3c7 98px,
+                #bdc3c7 100px
+            );
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .day-markers {
+            position: absolute;
+            top: -30px;
+            left: 170px;
+            right: 20px;
+            height: 20px;
+            font-size: 10px;
+            color: #7f8c8d;
+        }
+        
+        .day-marker {
+            position: absolute;
+            top: 0;
+        }
+        
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #34495e;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .arrow-1 { left: 420px; }
+        .arrow-2 { left: 420px; }
+        .arrow-3 { left: 690px; }
+        .arrow-4 { left: 940px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Release Train Process - 30-Day Cycle
+        </div>
+        
+        <div class="day-markers">
+            <div class="day-marker" style="left: 20px;">Day 0</div>
+            <div class="day-marker" style="left: 300px;">Day 15</div>
+            <div class="day-marker" style="left: 420px;">Day 20</div>
+            <div class="day-marker" style="left: 550px;">Day 25</div>
+            <div class="day-marker" style="left: 820px;">Day 30</div>
+        </div>
+        
+        <div class="lane dev-lane">
+            <div class="lane-label">DEV</div>
+            <div class="lane-content">
+                <div class="timeline"></div>
+                <div class="milestone scope-lock">
+                    Day 0<br>Scope Lock
+                </div>
+                <div class="milestone code-freeze">
+                    Day 15<br>Code Freeze
+                </div>
+                <div class="arrow arrow-1"></div>
+            </div>
+        </div>
+        
+        <div class="lane qa-lane">
+            <div class="lane-label">QA</div>
+            <div class="lane-content">
+                <div class="timeline"></div>
+                <div class="milestone qa-freeze">
+                    Day 20<br>QA Freeze
+                </div>
+                <div class="arrow arrow-2"></div>
+            </div>
+        </div>
+        
+        <div class="lane uat-lane">
+            <div class="lane-label">UAT / Stakeholders</div>
+            <div class="lane-content">
+                <div class="timeline"></div>
+                <div class="milestone demo">
+                    Day 25<br>Stakeholder Demo
+                </div>
+                <div class="arrow arrow-3"></div>
+            </div>
+        </div>
+        
+        <div class="lane release-lane">
+            <div class="lane-label">RELEASE</div>
+            <div class="lane-content">
+                <div class="timeline"></div>
+                <div class="milestone production">
+                    Day 30<br>Production
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h3>Release Train Process Overview</h3>
+        <ul>
+            <li><strong>Day 0 - Scope Lock:</strong> Feature scope is finalized and locked for the release</li>
+            <li><strong>Day 15 - Code Freeze:</strong> No new code changes, only bug fixes allowed</li>
+            <li><strong>Day 20 - QA Freeze:</strong> QA testing complete, ready for stakeholder review</li>
+            <li><strong>Day 25 - Stakeholder Demo:</strong> Final review and approval from stakeholders</li>
+            <li><strong>Day 30 - Production:</strong> Release deployed to production environment</li>
+        </ul>
+    </div>
+</body>
+</html>
