@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2025-07-17T12:00:00.000Z" agent="5.0 (Win)" etag="template" version="20.5.4" type="device">
+  <diagram id="ReleaseTrain" name="Release Train">
+    <mxGraphModel dx="1108" dy="566" grid="1" gridSize="10" guides="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Лэйны -->
+        <mxCell id="devLane" value="DEV" style="swimlane;fillColor=#dae8fc;fontColor=#1b5397;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1000" height="100"/>
+        </mxCell>
+        <mxCell id="qaLane" value="QA" style="swimlane;fillColor=#fff2cc;fontColor=#d69100;" vertex="1" parent="1">
+          <mxGeometry x="0" y="100" width="1000" height="100"/>
+        </mxCell>
+        <mxCell id="uatLane" value="UAT / Stakeholders" style="swimlane;fillColor=#e1d5e7;fontColor=#5e4b8b;" vertex="1" parent="1">
+          <mxGeometry x="0" y="200" width="1000" height="100"/>
+        </mxCell>
+        <mxCell id="relLane" value="RELEASE" style="swimlane;fillColor=#d5e8d4;fontColor=#2b6c2b;" vertex="1" parent="1">
+          <mxGeometry x="0" y="300" width="1000" height="100"/>
+        </mxCell>
+
+        <!-- Контрольные точки -->
+        <mxCell id="scopeLock" value="Day&nbsp;0&#xa;Scope&nbsp;Lock" style="rounded=1;whiteSpace=wrap;fillColor=#ffcccc;fontColor=#b85450;" vertex="1" parent="devLane">
+          <mxGeometry x="20" y="10" width="120" height="60"/>
+        </mxCell>
+        <mxCell id="codeFreeze" value="Day&nbsp;15&#xa;Code&nbsp;Freeze" style="rounded=1;whiteSpace=wrap;fillColor=#ffe6cc;fontColor=#d69100;" vertex="1" parent="devLane">
+          <mxGeometry x="300" y="10" width="120" height="60"/>
+        </mxCell>
+        <mxCell id="qaFreeze" value="Day&nbsp;20&#xa;QA&nbsp;Freeze" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;fontColor=#d69100;" vertex="1" parent="qaLane">
+          <mxGeometry x="300" y="10" width="120" height="60"/>
+        </mxCell>
+        <mxCell id="demo" value="Day&nbsp;25&#xa;Stakeholder&nbsp;Demo" style="rounded=1;whiteSpace=wrap;fillColor=#e1d5e7;fontColor=#5e4b8b;" vertex="1" parent="uatLane">
+          <mxGeometry x="550" y="10" width="140" height="60"/>
+        </mxCell>
+        <mxCell id="release" value="Day&nbsp;30&#xa;Production" style="rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;fontColor=#2b6c2b;" vertex="1" parent="relLane">
+          <mxGeometry x="820" y="10" width="120" height="60"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
